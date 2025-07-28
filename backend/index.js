@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import connectToMongodb from "./db/connectToMongodb.js";
@@ -10,6 +11,10 @@ import { app, server } from "./socket/socket.js";
 const PORT =  process.env.PORT || 5000
 
 dotenv.config();
+app.use(cors({
+    origin:"https://chat-app-3-aarh.onrender.com",
+    credentials:true
+}));
 app.use(express.json());
 app.use(cookieParser());
 
