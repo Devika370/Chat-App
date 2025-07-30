@@ -14,6 +14,11 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(cors({
+  origin: "https://chat-app-3-aarh.onrender.com",
+  credentials: true
+}));
+
 
 app.use("/api/auth" , authRoutes)
 app.use("/api/messages" , messageRoutes)
