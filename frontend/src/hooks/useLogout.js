@@ -6,11 +6,11 @@ import toast from "react-hot-toast"
 const useLogout = () => {
   const [loading,setLoading] = useState(false)
   const {setAuthUser} = useAuthContext()  
-  const baseUrl = import.meta.env.VITE_API_URL;
+  
 const logout = async() =>{
 setLoading(true)
 try{
-    const res = await fetch(`${baseUrl}/api/auth/logout`, {
+    const res = await fetch(`https://chat-app-real.onrender.com/api/auth/logout`, {
     method: "POST",
     headers: { "Content-Type":"application/json"},
     credentials: "include",
