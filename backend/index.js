@@ -7,15 +7,15 @@ import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import { app, server } from "./socket/socket.js";
 
-const PORT =  process.env.PORT || 5000
-
 dotenv.config();
+
+const PORT =  process.env.PORT || 5000
 
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "https://chat-app-3-aarh.onrender.com",
+  origin: "https://chat-app-real-frontend.onrender.com",
   credentials: true
 }));
 
