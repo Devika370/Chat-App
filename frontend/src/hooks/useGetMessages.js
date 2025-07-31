@@ -11,7 +11,10 @@ const useGetMessages = () => {
     const getMessages = async() =>{
         setLoading(true);
         try{
-            const res = await fetch(`https://chat-app-real.onrender.com/api/messages/${selectedConversation._id}`)
+            const res = await fetch(`https://chat-app-real.onrender.com/api/messages/${selectedConversation._id}`,{
+                method: 'GET',
+                credentials:'include'
+            })
             const data = await res.json()
             if(data.error) throw new Error(data.error)
                 setMessages(data)
